@@ -3,8 +3,8 @@
   "name": "JobKit API",
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#2563eb",
-    "light": "#2563eb",
+    "primary": "#3b82f6",
+    "light": "#3b82f6",
     "dark": "#2563eb",
     "anchors": {
       "from": "#3b82f6",
