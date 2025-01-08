@@ -11,6 +11,16 @@
       "to": "#2563eb"
     }
   },
+  "theme": "prism",
+  "background": {
+    "style": "gradient"
+  },
+  "topbar": {
+    "style": "gradient"
+  },
+  "codeBlock": {
+    "mode": "auto"
+  },
   "topbarLinks": [
     {
       "name": "Homepage",
