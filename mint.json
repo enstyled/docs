@@ -56,43 +56,33 @@
     {
       "group": "Jobs",
       "pages": [
-        "api/jobs/list",
-        "api/jobs/get",
-        "api/jobs/create",
-        "api/jobs/update",
-        "api/jobs/delete"
+        "jobs/list",
+        "jobs/get",
+        "jobs/create",
+        "jobs/update",
+        "jobs/delete"
       ]
     },
     {
       "group": "Categories",
       "pages": [
-        "api/categories/list",
-        "api/categories/create",
-        "api/categories/update",
-        "api/categories/delete"
+        "categories/list",
+        "categories/create",
+        "categories/update",
+        "categories/delete"
       ]
     },
     {
       "group": "Terms",
-      "pages": [
-        "api/terms/list",
-        "api/terms/create",
-        "api/terms/update",
-        "api/terms/delete"
-      ]
+      "pages": ["terms/list", "terms/create", "terms/update", "terms/delete"]
     },
     {
       "group": "Plans",
-      "pages": [
-        "api/plans/list",
-        "api/plans/create",
-        "api/plans/update",
-        "api/plans/archive"
-      ]
+      "pages": ["plans/list", "plans/create", "plans/update", "plans/archive"]
     },
     {
       "group": "Other",
-      "pages": ["api/analytics", "api/subscribers", "api/users"]
+      "pages": ["analytics", "subscribers", "users"]
     }
   ],
   "api": {
