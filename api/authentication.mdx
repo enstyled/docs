@@ -1,12 +1,16 @@
 ---
 title: 'Authentication'
-description: 'All API endpoints are accessible on your job board address and accepts JSON or form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP verbs, response codes and authentication.'
+description: 'The API uses Basic HTTP Authentication to authenticate requests.'
 icon: 'at'
 ---
 
-Administrators can read, create, update and delete any resource on the board.
+You should provide your user email and password in an `Authorization` header in order to authenticate each request:
 
-Some resources will return extra data when authenticated as administrator or the owner of that resource.
+```
+Authorization: Basic base64(email:password)
+```
+
+Administrators can read, create, update and delete any resource on the board. Some resources will return extra data when authenticated as administrator or the owner of that resource.
 
 <Warning>Please keep your email and password secure! Change them if you think someone else has access to them.</Warning>
 
