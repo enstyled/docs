@@ -51,15 +51,54 @@
   "navigation": [
     {
       "group": "API Documentation",
-      "pages": ["api-reference/introduction", "api-reference/authentication"]
+      "pages": ["api/introduction", "api/authentication"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Jobs",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api/jobs/list",
+        "api/jobs/get",
+        "api/jobs/create",
+        "api/jobs/update",
+        "api/jobs/delete"
       ]
+    },
+    {
+      "group": "Categories",
+      "pages": [
+        "api/categories/list",
+        "api/categories/create",
+        "api/categories/update",
+        "api/categories/delete"
+      ]
+    },
+    {
+      "group": "Terms",
+      "pages": [
+        "api/terms/list",
+        "api/terms/create",
+        "api/terms/update",
+        "api/terms/delete"
+      ]
+    },
+    {
+      "group": "Plans",
+      "pages": [
+        "api/plans/list",
+        "api/plans/create",
+        "api/plans/update",
+        "api/plans/archive"
+      ]
+    },
+    {
+      "group": "Other",
+      "pages": ["api/analytics", "api/subscribers", "api/users"]
     }
-  ]
+  ],
+  "api": {
+    "baseUrl": "https://elixir.jobkit.io",
+    "auth": {
+      "method": "basic"
+    }
+  }
 }

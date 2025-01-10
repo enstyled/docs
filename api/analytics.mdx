@@ -1,0 +1,42 @@
+---
+title: 'Analytics'
+description: 'The analytics data for the job board'
+api: 'GET /analytics.json'
+---
+
+<Note>Requires admin authentication</Note>
+
+<ResponseExample>
+```json Response
+{
+  "events_per_day": {
+    "2025-01-10": 16,
+    "2025-01-09": 90,
+    "2025-01-08": 72,
+    "2025-01-07": 54,
+    "2025-01-06": 60
+  },
+  "top_paths": {
+    "/": 35,
+    "/jobs/1": 15,
+    "/jobs/2": 14,
+    "/users/sign_in": 12,
+    "/jobs/3": 7,
+    "/jobs/4": 5
+  },
+  "top_countries": {
+    "United States": 30,
+    "Germany": 22,
+    "France": 15,
+    "Denmark": 5
+  },
+  "top_sources": {
+    "google.com": 10,
+    "x.com": 6
+  },
+  "jobs": 2,
+  "subscribers": 1,
+  "users": 2
+}
+```
+</ResponseExample>

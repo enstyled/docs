@@ -1,0 +1,20 @@
+---
+title: 'Delete term'
+description: 'Delete a term with the given ID and all related jobs'
+api: 'DELETE /terms/{id}.json'
+---
+
+<Note>Requires admin authentication</Note>
+<Warning>All jobs related to the deleted term will be deleted as well</Warning>
+
+<ParamField path="id" type="integer" required>
+  The id of the term to update
+</ParamField>
+
+<ResponseExample>
+```json Response
+  {
+    "message": "Term was successfully removed."
+  }
+```
+</ResponseExample>

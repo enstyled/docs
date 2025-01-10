@@ -1,0 +1,111 @@
+---
+title: 'Update job'
+description: 'The list of all job categories'
+api: 'PUT /jobs/{id}.json'
+---
+
+<Note>Requires user authentication</Note>
+
+<ParamField path="id" type="integer" required>
+  The id of the job to update
+</ParamField>
+
+<ParamField body="title" type="string">
+  The job title, maximum 64 characters
+</ParamField>
+
+<ParamField body="description" type="string">
+  The job description in Markdown format
+</ParamField>
+
+<ParamField body="location" type="string">
+  The job location, e.g. Worldwide
+</ParamField>
+
+<ParamField body="salary" type="integer">
+  The job salary, can be empty if not specified
+</ParamField>
+
+<ParamField body="salary_currency" type="string" default="USD">
+  The job salary currency in ISO format, required when `salary` is specified
+</ParamField>
+
+<ParamField body="salary_period" type="string" default="monthly">
+  The job salary period, should be either `hourly`, `daily`, `weekly`, `monthly` or `yearly`
+</ParamField>
+
+<ParamField body="arrangement" type="string" default="remote">
+  The job arrangement, should be either `remote`, `onsite` or `hybrid`
+</ParamField>
+
+<ParamField body="category_id" type="integer">
+  The id of the job category
+</ParamField>
+
+<ParamField body="term_id" type="integer">
+  The id of the job term
+</ParamField>
+
+<ParamField body="company" type="string">
+  The name of the hiring company
+</ParamField>
+
+<ParamField body="company_website" type="string">
+  The URL of the hiring company website
+</ParamField>
+
+<ParamField body="application_type" type="string" default="url">
+  The job application type, should be either `url` or `email`
+</ParamField>
+
+<ParamField body="application_url" type="string">
+  The job application URL, required if `application_type` is `url`
+</ParamField>
+
+<ParamField body="application_email" type="string">
+  The job application email, required if `application_type` is `email`
+</ParamField>
+
+<ParamField body="logo" type="file">
+  The job logo image file, maximum 5MB
+</ParamField>
+
+<ResponseExample>
+```json Response
+{
+  "id": 2,
+  "title": "Job title",
+  "description": "Job description in Markdown format",
+  "location": "Worldwide",
+  "arrangement": "remote",
+  "salary": "120000",
+  "salary_currency": "USD",
+  "salary_period": "yearly",
+  "company": "Company LLC",
+  "company_website": "https://www.company.com",
+  "application_type": "url",
+  "application_url": "https://www.company.com/application",
+  "term": {
+    "id": 1,
+    "name": "Full-time"
+  },
+  "category": {
+    "id": 1,
+    "name": "Engineering"
+  },
+  "plan": {
+    "id": 1,
+    "name": "Basic",
+    "price": 0,
+    "period": 30,
+    "highlight": false,
+    "badge": false,
+    "pin": false
+  },
+  "logo": "https://job.board.com/files/.../2.png",
+  "url": "https://job.board.com/jobs/2.json",
+  "preview_image_url": "https://job.board.com/jobs/2.png",
+  "created_at": "2025-01-10T18:21:59+00:00"
+}
+```
+</ResponseExample>

@@ -1,0 +1,20 @@
+---
+title: 'Delete category'
+description: 'Delete a category with the given ID and all related jobs'
+api: 'DELETE /categories/{id}.json'
+---
+
+<Note>Requires admin authentication</Note>
+<Warning>All jobs related to the deleted category will be deleted as well</Warning>
+
+<ParamField path="id" type="integer" required>
+  The id of the category to delete
+</ParamField>
+
+<ResponseExample>
+```json Response
+  {
+    "message": "Category was successfully removed."
+  }
+```
+</ResponseExample>

@@ -1,0 +1,24 @@
+---
+title: 'Update category'
+description: 'Update a category with the given ID'
+api: 'PUT /categories/{id}.json'
+---
+
+<Note>Requires admin authentication</Note>
+
+<ParamField path="id" type="integer" required>
+  The id of the category to update
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  The new name of the category
+</ParamField>
+
+<ResponseExample>
+```json Response
+  {
+    "id": 123,
+    "name": "<string>"
+  }
+```
+</ResponseExample>

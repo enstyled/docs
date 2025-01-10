@@ -1,0 +1,45 @@
+---
+title: 'Create plan'
+description: 'Create a new payment plan'
+api: 'POST /plans.json'
+---
+
+<Note>Requires admin authentication</Note>
+
+<ParamField body="name" type="string" required>
+  The name of the plan, should be 3-32 characters
+</ParamField>
+
+<ParamField body="price" type="integer" required>
+  The price of a job in this plan, can be set to 0
+</ParamField>
+
+<ParamField body="period" type="integer" required>
+  The period of the plan in days, should be between 1 and 90
+</ParamField>
+
+<ParamField body="highlight" type="boolean" default="false">
+  Whether the jobs in this plan will be highlighted
+</ParamField>
+
+<ParamField body="badge" type="boolean" default="false">
+  Whether the jobs in this plan will have a badge displayed
+</ParamField>
+
+<ParamField body="pin" type="boolean" default="false">
+  Whether the jobs in this plan will be pinned to the top of the list
+</ParamField>
+
+<ResponseExample>
+```json Response
+{
+  "id": 3,
+  "name": "Featured",
+  "price": 99,
+  "period": 30,
+  "highlight": true,
+  "badge": true,
+  "pin": true
+}
+```
+</ResponseExample>

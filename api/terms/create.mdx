@@ -1,0 +1,20 @@
+---
+title: 'Create term'
+description: 'Create a new job term'
+api: 'POST /terms.json'
+---
+
+<Note>Requires admin authentication</Note>
+
+<ParamField body="name" type="string" required>
+  The name of the category
+</ParamField>
+
+<ResponseExample>
+```json Response
+  {
+    "id": 123,
+    "name": "<string>"
+  }
+```
+</ResponseExample>

@@ -1,0 +1,49 @@
+---
+title: 'Get job'
+description: 'The list of all job categories'
+api: 'GET /jobs/{id}.json'
+---
+
+<ParamField query="id" type="integer" required>
+  The id of the job
+</ParamField>
+
+<ResponseExample>
+```json Response
+{
+  "id": 1,
+  "title": "Job title",
+  "description": "Job description in Markdown format",
+  "location": "Worldwide",
+  "arrangement": "remote",
+  "salary": "100000",
+  "salary_currency": "USD",
+  "salary_period": "yearly",
+  "company": "Company LLC",
+  "company_website": "https://www.company.com",
+  "application_type": "email",
+  "application_email": "email@company.com",
+  "term": {
+    "id": 1,
+    "name": "Full-time"
+  },
+  "category": {
+    "id": 1,
+    "name": "Engineering"
+  },
+  "plan": {
+    "id": 1,
+    "name": "Basic",
+    "price": 0,
+    "period": 30,
+    "highlight": false,
+    "badge": false,
+    "pin": false
+  },
+  "logo": "https://job.board.com/files/.../1.png",
+  "url": "https://job.board.com/jobs/1.json",
+  "preview_image_url": "https://job.board.com/jobs/1.png",
+  "created_at": "2025-01-10T18:21:59+00:00"
+}
+```
+</ResponseExample>

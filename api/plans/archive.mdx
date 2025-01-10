@@ -1,0 +1,20 @@
+---
+title: 'Archive plan'
+description: 'Archive a plan with the given ID'
+api: 'PUT /plans/{id}/archive.json'
+---
+
+<Note>Requires admin authentication</Note>
+<Check>The plan will be hidden in the future. Existing jobs will NOT be affected</Check>
+
+<ParamField path="id" type="integer" required>
+  The id of the plan to archive
+</ParamField>
+
+<ResponseExample>
+```json Response
+  {
+    "message": "Plan successfully archived."
+  }
+```
+</ResponseExample>

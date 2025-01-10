@@ -1,0 +1,19 @@
+---
+title: 'Delete job'
+description: 'The list of all job categories'
+api: 'DELETE /jobs/{id}.json'
+---
+
+<Note>Requires user authentication</Note>
+
+<ParamField path="id" type="integer" required>
+  The id of the job to delete
+</ParamField>
+
+<ResponseExample>
+```json Response
+  {
+    "message": "Job successfully deleted."
+  }
+```
+</ResponseExample>

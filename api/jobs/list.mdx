@@ -1,0 +1,94 @@
+---
+title: 'List jobs'
+description: 'The list of all jobs accessible by the authenticated user'
+api: 'GET /jobs.json'
+---
+
+<ParamField query="q" type="string">
+  The search query to filter the list of jobs
+</ParamField>
+
+<ParamField query="term" type="integer">
+  The term id to filter the list of jobs
+</ParamField>
+
+<ParamField query="category" type="integer">
+  The category id to filter the list of jobs
+</ParamField>
+
+<ResponseExample>
+```json Response
+[
+  {
+    "id": 1,
+    "title": "Job title",
+    "description": "Job description in Markdown format",
+    "location": "Worldwide",
+    "arrangement": "remote",
+    "salary": "100000",
+    "salary_currency": "USD",
+    "salary_period": "yearly",
+    "company": "Company LLC",
+    "company_website": "https://www.company.com",
+    "application_type": "email",
+    "application_email": "email@company.com",
+    "term": {
+      "id": 1,
+      "name": "Full-time"
+    },
+    "category": {
+      "id": 1,
+      "name": "Engineering"
+    },
+    "plan": {
+      "id": 1,
+      "name": "Basic",
+      "price": 0,
+      "period": 30,
+      "highlight": false,
+      "badge": false,
+      "pin": false
+    },
+    "logo": "https://job.board.com/files/.../1.png",
+    "url": "https://job.board.com/jobs/1.json",
+    "preview_image_url": "https://job.board.com/jobs/1.png",
+    "created_at": "2025-01-10T18:21:59+00:00"
+  },
+  {
+    "id": 2,
+    "title": "Job title",
+    "description": "Job description in Markdown format",
+    "location": "Worldwide",
+    "arrangement": "remote",
+    "salary": "120000",
+    "salary_currency": "USD",
+    "salary_period": "yearly",
+    "company": "Company LLC",
+    "company_website": "https://www.company.com",
+    "application_type": "url",
+    "application_url": "https://www.company.com/application",
+    "term": {
+      "id": 1,
+      "name": "Full-time"
+    },
+    "category": {
+      "id": 1,
+      "name": "Engineering"
+    },
+    "plan": {
+      "id": 1,
+      "name": "Basic",
+      "price": 0,
+      "period": 30,
+      "highlight": false,
+      "badge": false,
+      "pin": false
+    },
+    "logo": "https://job.board.com/files/.../2.png",
+    "url": "https://job.board.com/jobs/2.json",
+    "preview_image_url": "https://job.board.com/jobs/2.png",
+    "created_at": "2025-01-10T18:21:59+00:00"
+  }
+]
+```
+</ResponseExample>

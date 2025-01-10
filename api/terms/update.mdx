@@ -1,0 +1,24 @@
+---
+title: 'Update term'
+description: 'Update a job term with the given ID'
+api: 'PUT /terms/{id}.json'
+---
+
+<Note>Requires admin authentication</Note>
+
+<ParamField path="id" type="integer" required>
+  The id of the term to update
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  The new name of the term
+</ParamField>
+
+<ResponseExample>
+```json Response
+  {
+    "id": 123,
+    "name": "<string>"
+  }
+```
+</ResponseExample>

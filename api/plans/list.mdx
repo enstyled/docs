@@ -1,0 +1,41 @@
+---
+title: 'List plans'
+description: 'The list of all active payment plans'
+api: 'GET /plans.json'
+---
+
+<Note>Requires user authentication</Note>
+
+<ResponseExample>
+```json Response
+[
+  {
+    "id": 1,
+    "name": "Basic",
+    "price": 0,
+    "period": 30,
+    "highlight": false,
+    "badge": false,
+    "pin": false
+  },
+  {
+    "id": 2,
+    "name": "Highlighted",
+    "price": 49,
+    "period": 30,
+    "highlight": true,
+    "badge": false,
+    "pin": false
+  },
+  {
+    "id": 3,
+    "name": "Featured",
+    "price": 99,
+    "period": 30,
+    "highlight": true,
+    "badge": true,
+    "pin": true
+  }
+]
+```
+</ResponseExample>
