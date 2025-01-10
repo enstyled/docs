@@ -51,7 +51,7 @@
   "navigation": [
     {
       "group": "API Documentation",
-      "pages": ["api/introduction", "api/authentication"]
+      "pages": ["introduction", "authentication"]
     },
     {
       "group": "Jobs",
