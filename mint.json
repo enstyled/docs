@@ -63,38 +63,56 @@
   "navigation": [
     {
       "group": "API Documentation",
-      "pages": ["introduction", "authentication"]
-    },
-    {
-      "group": "Jobs",
       "pages": [
-        "jobs/list",
-        "jobs/get",
-        "jobs/create",
-        "jobs/update",
-        "jobs/delete"
+        "introduction",
+        "authentication",
+        {
+          "group": "Jobs",
+          "icon": "bars",
+          "pages": [
+            "jobs/list",
+            "jobs/get",
+            "jobs/create",
+            "jobs/update",
+            "jobs/delete"
+          ]
+        },
+        {
+          "group": "Categories",
+          "icon": "folder",
+          "pages": [
+            "categories/list",
+            "categories/create",
+            "categories/update",
+            "categories/delete"
+          ]
+        },
+        {
+          "group": "Terms",
+          "icon": "briefcase",
+          "pages": [
+            "terms/list",
+            "terms/create",
+            "terms/update",
+            "terms/delete"
+          ]
+        },
+        {
+          "group": "Plans",
+          "icon": "money-bill",
+          "pages": [
+            "plans/list",
+            "plans/create",
+            "plans/update",
+            "plans/archive"
+          ]
+        },
+        {
+          "group": "Other",
+          "icon": "ellipsis",
+          "pages": ["analytics", "subscribers", "users"]
+        }
       ]
-    },
-    {
-      "group": "Categories",
-      "pages": [
-        "categories/list",
-        "categories/create",
-        "categories/update",
-        "categories/delete"
-      ]
-    },
-    {
-      "group": "Terms",
-      "pages": ["terms/list", "terms/create", "terms/update", "terms/delete"]
-    },
-    {
-      "group": "Plans",
-      "pages": ["plans/list", "plans/create", "plans/update", "plans/archive"]
-    },
-    {
-      "group": "Other",
-      "pages": ["analytics", "subscribers", "users"]
     }
   ],
   "api": {
