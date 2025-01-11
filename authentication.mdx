@@ -4,14 +4,72 @@ description: 'The API uses Basic HTTP Authentication to authenticate requests.'
 icon: 'at'
 ---
 
-You should provide your user email and password in an `Authorization` header in order to authenticate each request:
+Authenticate each request by providing your user encoded email and password in an Authorization header:
 
 ```
 Authorization: Basic base64(email:password)
 ```
 
-Admin users can read, create, update and delete any resource on the board. Some resources will return extra data when authenticated as administrator or the owner of that resource.
+You can learn more about [Basic HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
+
+<RequestExample>
+```bash cURL
+curl --request GET \
+  --url https://elixir.jobkit.io/jobs.json \
+  --header 'Authorization: Basic cGFzc3dvcmQ6ZW1haWw'
+```
+</RequestExample>
+
+<ResponseExample>
+```json 200
+[
+  {
+    "id": 1,
+    "title": "Job title",
+    "description": "Job description in Markdown format",
+    "location": "Worldwide",
+    "arrangement": "remote",
+    "salary": "100000",
+    "salary_currency": "USD",
+    "salary_period": "yearly",
+    "company": "Company LLC",
+    "company_website": "https://www.company.com",
+    "application_type": "email",
+    "application_email": "email@company.com",
+    "term": {
+      "id": 1,
+      "name": "Full-time"
+    },
+    "category": {
+      "id": 1,
+      "name": "Engineering"
+    },
+    "plan": {
+      "id": 1,
+      "name": "Basic",
+      "price": 0,
+      "period": 30,
+      "highlight": false,
+      "badge": false,
+      "pin": false
+    },
+    "logo": "https://job.board.com/files/.../1.png",
+    "url": "https://job.board.com/jobs/1.json",
+    "preview_image_url": "https://job.board.com/jobs/1.png",
+    "created_at": "2025-01-10T18:21:59+00:00"
+  },
+  ...
+]
+```
+```json 401
+{
+  "error": "Invalid Email or password."
+}
+```
+</ResponseExample>
 
 <Warning>Please keep your email and password secure! Change them if you think they are compromised.</Warning>
 
 <Note>If your integration does not require administrator access, it's a good idea to create a separate user on your job board to authenticate the API requests.</Note>
+
+<Tip>Admin users can read, create, update and delete any resource on the board. Some resources will return extra data when authenticated as administrator or the owner of that resource.</Tip>
