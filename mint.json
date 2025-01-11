@@ -34,18 +34,30 @@
   "anchors": [
     {
       "name": "System status",
-      "icon": "robot",
-      "url": "https://status.jobkit.io/"
+      "icon": "satellite-dish",
+      "url": "https://status.jobkit.io/",
+      "color": {
+        "from": "#059669",
+        "to": "#10b981"
+      }
     },
     {
       "name": "Need help?",
       "icon": "life-ring",
-      "url": "mailto:hello@jobkit.io"
+      "url": "mailto:hello@jobkit.io",
+      "color": {
+        "from": "#db2777",
+        "to": "#ec4899"
+      }
     },
     {
       "name": "Updates",
       "icon": "x-twitter",
-      "url": "https://x.com/jobkitsite"
+      "url": "https://x.com/jobkitsite",
+      "color": {
+        "from": "#0891b2",
+        "to": "#06b6d4"
+      }
     }
   ],
   "navigation": [
