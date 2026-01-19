@@ -1,0 +1,132 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "JobKit API",
+  "colors": {
+    "primary": "#3b82f6",
+    "light": "#3b82f6",
+    "dark": "#2563eb"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": [
+              "introduction",
+              "authentication",
+              {
+                "group": "Jobs",
+                "icon": "bars",
+                "pages": [
+                  "jobs/list",
+                  "jobs/get",
+                  "jobs/create",
+                  "jobs/update",
+                  "jobs/delete"
+                ]
+              },
+              {
+                "group": "Categories",
+                "icon": "folder",
+                "pages": [
+                  "categories/list",
+                  "categories/create",
+                  "categories/update",
+                  "categories/delete"
+                ]
+              },
+              {
+                "group": "Terms",
+                "icon": "briefcase",
+                "pages": [
+                  "terms/list",
+                  "terms/create",
+                  "terms/update",
+                  "terms/delete"
+                ]
+              },
+              {
+                "group": "Plans",
+                "icon": "money-bill",
+                "pages": [
+                  "plans/list",
+                  "plans/create",
+                  "plans/update",
+                  "plans/archive"
+                ]
+              },
+              {
+                "group": "Other",
+                "icon": "ellipsis",
+                "pages": [
+                  "analytics",
+                  "subscribers",
+                  "users"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "System status",
+        "href": "https://status.jobkit.io/",
+        "icon": "satellite-dish",
+        "color": {
+          "light": "#059669",
+          "dark": "#059669"
+        }
+      },
+      {
+        "anchor": "Need help?",
+        "href": "mailto:hello@jobkit.io",
+        "icon": "life-ring",
+        "color": {
+          "light": "#db2777",
+          "dark": "#db2777"
+        }
+      },
+      {
+        "anchor": "Updates",
+        "href": "https://x.com/jobkitsite",
+        "icon": "x-twitter",
+        "color": {
+          "light": "#0891b2",
+          "dark": "#0891b2"
+        }
+      }
+    ]
+  },
+  "styling": {
+    "codeblocks": "system"
+  },
+  "api": {
+    "mdx": {
+      "server": "https://elixir.jobkit.io",
+      "auth": {
+        "method": "basic"
+      }
+    }
+  },
+  "background": {
+    "decoration": "gradient"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Homepage",
+        "href": "https://www.jobkit.io"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get started",
+      "href": "https://www.jobkit.io/new"
+    }
+  }
+}
