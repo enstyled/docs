@@ -1,12 +1,12 @@
 ---
 title: 'Webhooks'
-description: 'JobKit webhooks allows you to integrate your job board with external services, automate tasks and create custom workflows.'
+description: 'JobKit webhooks allows you to integrate your job board with external services, automate tasks and create custom workflows. If the API is a "pull" interface, the webhooks are a "push" interface.'
 icon: 'webhook'
 ---
 
 A "webhook" is a HTTP request to a specified URL made when certain event occurs.
 
-You can define the webhook URL in your job board settings page. When a new job is *published*, a `POST` HTTP request will be made to that URL, carrying a JSON payload that looks like this:
+You can define the webhook URL in your job board settings page. When a new job is **published**, a `POST` HTTP request will be made to that URL, carrying a JSON payload that looks like this:
 
 ```JSON
 {
@@ -52,8 +52,11 @@ You can define the webhook URL in your job board settings page. When a new job i
 }
 ```
 
-The receiving URL should return an appropriate HTTP response code, e.g. `200` for success, `4xx` for client errors and `5xx` for server errors.
+The receiving URL should return an appropriate HTTP response code, e.g.
+ - `200` for success
+ - `4xx` for client errors
+ - `5xx` for server errors
 
-Webhook requests will be retried up to 5 times until successfully received.
+Webhook requests will be retried **up to 5 times** until successfully received.
 
-Please make sure your webhook URL is secure, so you don't leak your users data!
+<Warning>Make sure your webhook URL is secure, so you don't leak user data!</Warning>
