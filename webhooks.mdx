@@ -1,12 +1,12 @@
 ---
 title: 'Webhooks'
-description: 'JobKit webhooks allows you to integrate your job board with external services, automate tasks and create custom workflows. If the API is a "pull" interface, the webhooks are a "push" interface.'
+description: 'A "webhook" is a HTTP request to a specified URL made when certain event occurs. If the JobKit API is a "pull" interface, webhooks are the "push" interface.'
 icon: 'webhook'
 ---
 
-A "webhook" is a HTTP request to a specified URL made when certain event occurs.
+You can define the webhook URL in your job board settings page.
 
-You can define the webhook URL in your job board settings page. When a new job is **published**, a `POST` HTTP request will be made to that URL, carrying a JSON payload that looks like this:
+When a new job is **published**, a `POST` HTTP request will be made to that URL, carrying a JSON payload that looks like this:
 
 ```JSON
 {

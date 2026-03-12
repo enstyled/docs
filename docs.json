@@ -64,12 +64,9 @@
                 "group": "Other",
                 "icon": "ellipsis",
                 "pages": ["analytics", "subscribers", "users"]
-              }
+              },
+              "webhooks"
             ]
-          },
-          {
-            "group": "More",
-            "pages": ["webhooks"]
           }
         ]
       },
