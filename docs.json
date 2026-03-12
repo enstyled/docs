@@ -63,13 +63,13 @@
               {
                 "group": "Other",
                 "icon": "ellipsis",
-                "pages": [
-                  "analytics",
-                  "subscribers",
-                  "users"
-                ]
+                "pages": ["analytics", "subscribers", "users"]
               }
             ]
+          },
+          {
+            "group": "More",
+            "pages": ["webhooks"]
           }
         ]
       },

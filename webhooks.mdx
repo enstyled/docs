@@ -1,0 +1,59 @@
+---
+title: 'Webhooks'
+description: 'JobKit webhooks allows you to integrate your job board with external services, automate tasks and create custom workflows.'
+icon: 'webhook'
+---
+
+A "webhook" is a HTTP request to a specified URL made when certain event occurs.
+
+You can define the webhook URL in your job board settings page. When a new job is *published*, a `POST` HTTP request will be made to that URL, carrying a JSON payload that looks like this:
+
+```JSON
+{
+  "title": "Job title",
+  "description": "Job description in Markdown format",
+  "location": "Worldwide",
+  "arrangement": "remote",
+  "salary": "100000",
+  "salary_currency": "USD",
+  "salary_period": "yearly",
+  "company": "Company LLC",
+  "company_website": "https://www.company.com",
+  "application_type": "email",
+  "application_email": "email@company.com",
+  "created_at": "2026-01-10T16:16:11.126Z",
+  "published_at": "2026-01-10T16:16:11.127Z",
+  "expires_at": "2026-03-09T16:12:07.347Z",
+  "term": {
+    "id": 1,
+    "name": "Full-time"
+  },
+  "category": {
+    "id": 1,
+    "name": "Engineering"
+  },
+  "plan": {
+    "name": "Basic",
+    "price": 0,
+    "period": 30,
+    "highlight": false,
+    "badge": false,
+    "pin": false
+  },
+  "user": {
+    "email": "user@company.com",
+    "created_at": "2026-01-10T12:16:11.126Z",
+    "role": "user",
+    "jobs_count": 5
+  },
+  "url": "https://job.board.com/jobs/1.json",
+  "preview_image_url": "https://job.board.com/jobs/1.png",
+  "logo": "https://job.board.com/files/.../1.png",
+}
+```
+
+The receiving URL should return an appropriate HTTP response code, e.g. `200` for success, `4xx` for client errors and `5xx` for server errors.
+
+Webhook requests will be retried up to 5 times until successfully received.
+
+Please make sure your webhook URL is secure, so you don't leak your users data!
