@@ -1,10 +1,16 @@
 ---
 title: 'Subscribers'
-description: 'The list of all email subsribers'
+description: 'The list of all email subscribers'
 api: 'GET /subscribers.json'
 ---
 
 <Note>Requires admin authentication</Note>
+
+Visitors subscribe through the form on the job board, so there's no endpoint to add subscribers. A subscriber with `email_confirmed: false` hasn't clicked the link in their confirmation email yet and doesn't receive the weekly email. Unconfirmed subscribers are deleted 30 days after their last confirmation email.
+
+<ParamField query="page" type="integer" default="1">
+  The page of results, newest subscribers first, 30 per page. A page past the last one responds with `404`.
+</ParamField>
 
 <ResponseExample>
 ```json Response

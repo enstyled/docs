@@ -6,15 +6,43 @@ api: 'GET /analytics.json'
 
 <Note>Requires admin authentication</Note>
 
+Traffic covers the last 30 days and counts page loads of the job board's web pages. Images, feeds and API requests aren't counted, and neither are known search engine crawlers, but other bots are. Traffic data is refreshed at most once an hour.
+
+<ResponseField name="events_per_day" type="object | null">
+  Page loads per day, keyed by UTC date, oldest first. Every one of the 30 days is included, with `0` for days without traffic.
+</ResponseField>
+
+<ResponseField name="top_paths" type="object | null">
+  The 6 most visited paths and their page loads.
+</ResponseField>
+
+<ResponseField name="top_countries" type="object | null">
+  The 6 countries with the most page loads, keyed by two-letter country code. An empty key means the country is unknown.
+</ResponseField>
+
+<ResponseField name="jobs" type="integer">
+  The number of jobs that haven't expired, including unpublished ones.
+</ResponseField>
+
+<ResponseField name="subscribers" type="integer">
+  The number of email subscribers, including those who haven't confirmed their email yet.
+</ResponseField>
+
+<ResponseField name="users" type="integer">
+  The number of registered users.
+</ResponseField>
+
+<Warning>`events_per_day`, `top_paths` and `top_countries` are `null` when traffic data is temporarily unavailable.</Warning>
+
 <ResponseExample>
 ```json Response
 {
   "events_per_day": {
-    "2025-01-10": 16,
-    "2025-01-09": 90,
-    "2025-01-08": 72,
+    "2025-01-06": 60,
     "2025-01-07": 54,
-    "2025-01-06": 60
+    "2025-01-08": 72,
+    "2025-01-09": 90,
+    "2025-01-10": 16
   },
   "top_paths": {
     "/": 35,
@@ -25,14 +53,10 @@ api: 'GET /analytics.json'
     "/jobs/4": 5
   },
   "top_countries": {
-    "United States": 30,
-    "Germany": 22,
-    "France": 15,
-    "Denmark": 5
-  },
-  "top_sources": {
-    "google.com": 10,
-    "x.com": 6
+    "US": 30,
+    "DE": 22,
+    "FR": 15,
+    "DK": 5
   },
   "jobs": 2,
   "subscribers": 1,
