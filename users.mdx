@@ -6,6 +6,10 @@ api: 'GET /users.json'
 
 <Note>Requires admin authentication</Note>
 
+<ParamField query="page" type="integer" default="1">
+  The page of results, 30 per page. A page past the last one responds with `404`.
+</ParamField>
+
 <ResponseExample>
 ```json Response
 [

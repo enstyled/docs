@@ -16,6 +16,10 @@ api: 'GET /jobs.json'
   The category id to filter the list of jobs
 </ParamField>
 
+<ParamField query="page" type="integer" default="1">
+  The page of results, 30 per page. A page past the last one responds with `404`.
+</ParamField>
+
 <ResponseExample>
 ```json Response
 [
