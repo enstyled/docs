@@ -1,20 +1,29 @@
 ---
 title: 'Delete category'
-description: 'Delete a category with the given ID and all related jobs'
+description: 'Delete a category that has no jobs'
 api: 'DELETE /categories/{id}.json'
 ---
 
 <Note>Requires admin authentication</Note>
-<Warning>All jobs related to the deleted category will be deleted as well</Warning>
+
+Only categories without jobs can be deleted, and a board always keeps at least one category. To delete a category that still has jobs, first move them to another category with [Update job](/jobs/update) by setting `category_id`.
 
 <ParamField path="id" type="integer" required>
   The id of the category to delete
 </ParamField>
 
 <ResponseExample>
-```json Response
-  {
-    "message": "Category was successfully removed."
-  }
+```json 200
+{
+  "message": "Category was successfully removed."
+}
+```
+
+```json 422
+{
+  "base": [
+    "It still has 2 jobs. Move them to another category first."
+  ]
+}
 ```
 </ResponseExample>

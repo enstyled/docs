@@ -1,20 +1,29 @@
 ---
 title: 'Delete term'
-description: 'Delete a term with the given ID and all related jobs'
+description: 'Delete a term that has no jobs'
 api: 'DELETE /terms/{id}.json'
 ---
 
 <Note>Requires admin authentication</Note>
-<Warning>All jobs related to the deleted term will be deleted as well</Warning>
+
+Only terms without jobs can be deleted, and a board always keeps at least one term. To delete a term that still has jobs, first move them to another term with [Update job](/jobs/update) by setting `term_id`.
 
 <ParamField path="id" type="integer" required>
-  The id of the term to update
+  The id of the term to delete
 </ParamField>
 
 <ResponseExample>
-```json Response
-  {
-    "message": "Term was successfully removed."
-  }
+```json 200
+{
+  "message": "Term was successfully deleted."
+}
+```
+
+```json 422
+{
+  "base": [
+    "It still has 2 jobs. Move them to another term first."
+  ]
+}
 ```
 </ResponseExample>
